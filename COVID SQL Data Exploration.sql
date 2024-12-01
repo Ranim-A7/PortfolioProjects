@@ -3,37 +3,31 @@ From PortfolioProject..CovidDeaths$
 Where continent is not null
 order by 3,4
 
---SELECT *
---From PortfolioProject..CovidVaccinations$
---order by 3,4
-
---Selecting Data to use
-Select Location, date, total_cases,new_cases, total_deaths, population
+--Selecting which data to use
+Select Location, Date, Total_cases,New_cases, Total_deaths, Population
 From PortfolioProject..CovidDeaths$
 order by 1,2
 
---Looking at Total Cases vs Total Deaths
--- This shows the liklihood of dying if you get covid in your country
-Select Location, date, total_cases, total_deaths, (total_deaths/total_cases)*100 as DeathPercentage
+--Looking at Total Cases vs Total Deaths (This shows the liklihood of dying if you get covid in your country)
+Select Location, Date, Total_cases, Total_deaths, (Total_deaths/Total_cases)*100 as DeathPercentage
 From PortfolioProject..CovidDeaths$
 Where continent is not null
 order by 1,2
 
--- Total cases VS population
--- shows what perceentrage of the population gets covid
+-- Total cases vs Population (shows what perceentrage of each population gets covid)
 Select Location, date, total_cases, population, (total_cases/population)*100 as PercentofPupulationInected
 From PortfolioProject..CovidDeaths$
 Where continent is not null
 order by 1,2
 
--- looking at countries with teh highest infection rates compared to teh population
+-- Looking at countries with the highest infection rates compared to their population
 Select Location, MAX(total_cases) as HighestInfectionCount, population, Max((total_cases/population))*100 as PercentofPopulationInected
 From PortfolioProject..CovidDeaths$
 -- location like'%states%'
 Group by Location, population
 order by PercentofPopulationInected desc
 
---Showing countries with the Highest Death Count Per Population
+--Showing countries with the highest death count per population
 Select Location, MAX(cast(Total_deaths as int)) as TotalDeathCount
 From PortfolioProject..CovidDeaths$
 -- location like'%states%'
@@ -58,7 +52,7 @@ Where continent is not null
 --Group by date
 order by 1,2
 
--- Looking at total population vs vaccinations
+-- Looking at total population vs vaccinations (With created view)
 Create View TotalPopvsVaccination as
 Select dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations, 
  SUM(CONVERT(int,vac.new_vaccinations)) OVER (Partition by dea.Location Order by 
