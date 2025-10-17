@@ -1,8 +1,8 @@
-Title: CS411 Data Dashboard
+Title: Data Dashboard
 
 Purpose:
 --------
-The CS411 Data Dashboard is a comprehensive web-based application designed to explore and analyze academic research data across multiple database systems. The application serves as a demonstration platform for database management systems, showcasing the integration of three different database technologies: MySQL (relational), Neo4j (graph), and MongoDB (document).
+Built with Cursor, this comprehensive web-based data dashboard was designed to explore and analyze academic research data across multiple database systems. The application serves as a demonstration platform for database management systems, showcasing the integration of three different database technologies: MySQL (relational), Neo4j (graph), and MongoDB (document).
 
 Target Users:
 - Database students and researchers learning about different database paradigms
@@ -16,10 +16,6 @@ Objectives:
 - Showcase different query patterns and optimization techniques
 - Enable users to search, filter, and save academic publication data
 - Visualize research trends and faculty expertise areas
-
-Demo:
------
-Video Demo: https://mediaspace.illinois.edu/media/t/1_caiv5ch8
 
 Installation:
 ------------
