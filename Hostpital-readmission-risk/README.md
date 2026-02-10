@@ -1,30 +1,22 @@
-# Hospital Readmission Risk Prediction
+# Architecture Overview
 
-## Problem Statement
-Hospital readmissions within 30 days are costly and often preventable.
-This project builds a predictive model to identify patients at high risk
-of readmission using historical electronic health record (EHR) data.
+## Data Source
+- UCI Diabetes 130-US Hospitals dataset
+- Batch CSV ingestion
 
-## Dataset
-- Source: UCI Machine Learning Repository
-- Size: ~130,000 hospital encounters
-- Domain: Diabetes-related admissions across U.S. hospitals
+## Pipeline Layers
+1. Raw layer: immutable ingestion
+2. Staging layer: type casting & normalization
+3. Analytics layer: star schema (fact + dimensions)
 
-## Objective
-Predict whether a patient will be readmitted within 30 days of discharge.
+## Consumers
+- BI dashboards
+- ML feature pipelines
 
-## Target Variable
-Binary indicator:
-- 1 = Readmitted within 30 days
-- 0 = No readmission or readmitted after 30 days
+## Orchestration
+- Apache Airflow (batch, daily)
 
-## Evaluation Metrics
-- ROC-AUC
-- Precision-Recall (class imbalance)
-
-## Tools & Technologies
-- SQL (PostgreSQL / MySQL)
-- Python (pandas, scikit-learn, XGBoost)
-- SHAP for model interpretability
-- Streamlit/Dash for visualization
-
+## Data Quality Guarantees
+- Row count consistency
+- Valid categorical values
+- Non-null business keys
