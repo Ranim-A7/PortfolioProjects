@@ -1,22 +1,28 @@
-# Architecture Overview
+# Healthcare Readmission Analytics Pipeline
 
-## Data Source
-- UCI Diabetes 130-US Hospitals dataset
-- Batch CSV ingestion
+## Overview
+This project implements a batch data pipeline that ingests raw hospital
+encounter data and transforms it into analytics-ready fact and dimension
+tables with data quality validation.
 
-## Pipeline Layers
-1. Raw layer: immutable ingestion
-2. Staging layer: type casting & normalization
-3. Analytics layer: star schema (fact + dimensions)
+## Data Flow
+Raw CSV → Raw Tables → Staging → Analytics Marts
 
-## Consumers
-- BI dashboards
-- ML feature pipelines
+## Technologies
+- PostgreSQL
+- Python
+- SQL
+- Apache Airflow
 
-## Orchestration
-- Apache Airflow (batch, daily)
+## Data Layers
+- raw_diabetic_encounters (immutable)
+- stg_diabetic_encounters (cleaned)
+- fact_readmissions
+- dim_patient
+- dim_admission
+- dim_diagnosis
 
-## Data Quality Guarantees
-- Row count consistency
-- Valid categorical values
-- Non-null business keys
+## Quality Checks
+- Row count validation
+- Null thresholds
+- Valid domain values
