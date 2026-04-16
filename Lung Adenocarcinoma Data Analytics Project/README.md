@@ -4,7 +4,7 @@ This project analyzes clinical and gene expression data from The Cancer Genome A
 
 ## Dashboard Preview
 
-![Dashboard]([dashboard/dashboard_screenshot.png](https://github.com/Ranim-A7/PortfolioProjects/blob/main/Lung%20Adenocarcinoma%20Data%20Analytics%20Project/dashboard/LUAD%20Dashboard.png))
+![Dashboard]([dashboard/dashboard_screenshot.png])
 
 ## Objective
 
