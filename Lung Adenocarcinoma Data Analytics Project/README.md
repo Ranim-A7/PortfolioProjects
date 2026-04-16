@@ -2,10 +2,6 @@
 
 This project analyzes clinical and gene expression data from The Cancer Genome Atlas (TCGA) to identify factors associated with 5-year survival in lung adenocarcinoma (LUAD) patients.
 
-## Dashboard Preview
-
-![Dashboard]([dashboard/dashboard_screenshot.png])
-
 ## Objective
 
 To evaluate how clinical factors (age, stage) and gene expression biomarkers influence survival outcomes in LUAD patients.
